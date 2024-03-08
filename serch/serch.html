@@ -1,0 +1,122 @@
+<!-- 検索用ページコード　動くやつ -->
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Users/hinaho/Documents/maternityheroes/serch/serch.css">
+    <title>検索</title>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="inner">
+            <ul class="navi">
+                <li><a href="/Users/hinaho/Documents/maternityheroes/serch/serch.html">口コミを探す</a></li>
+                <li>
+                    <a href="/Users/hinaho/Documents/maternityheroes/info/info.html">情報を探す</a>
+                </li>
+                <li><a href="/Users/hinaho/Documents/maternityheroes/chat/chat.html">雑談する</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+    <h2>病院リスト</h2>
+
+    <!-- 入力フォーム -->
+
+
+    <div class="search-box">
+
+        <input type="text" placeholder="病院名または住所" name="search" value="" id="search">
+
+    </div>
+
+    <!-- あかさん画像 -->
+
+    <img src="/Users/hinaho/Documents/maternityheroes/image/akasan改.jpg"
+        alt="あかさん画像" class="baby">
+
+    <!-- 病院リスト -->
+
+
+    <table class="tb01">
+        <tr class="head">
+            <th>病院名</th>
+            <th>住所</th>
+        </tr>
+        <tr>
+            <td><a href="https://maternity-heroes1.glitch.me/"  style="color: black;">加藤レディスクリニック</a></td>
+            <td>東京都新宿区西新宿7-20-3</td>
+        </tr>
+        <tr>
+            <td><a href="" >かわかた医院</a></td>
+            <td>東京都新宿区大久保2丁目18-16</td>
+        </tr>
+        <tr>
+            <td>御苑アンジェリカクリニック</td>
+            <td>東京都新宿区内藤町1-5　KI御苑内藤町ビル1F</td>
+        </tr>
+        <tr>
+            <td>国立研究開発法人国立国際医療研究センター病院</td>
+            <td>東京都新宿区戸山1丁目21-1</td>
+        </tr>
+        <tr>
+            <td>東京女子医科大学病院</td>
+            <td>東京都新宿区河田町8-1</td>
+        </tr>
+        <tr>
+            <td>社会福祉法人聖母会聖母病院</td>
+            <td>東京都新宿区中落合2-5-1</td>
+        </tr>
+        <tr>
+            <td>新宿駅前婦人科クリニック</td>
+            <td>東京都新宿区新宿3-1-16　京王新宿追分第2ビル4階</td>
+        </tr>
+
+        <tr>
+            <td>高村医院</td>
+            <td>東京都新宿区四谷3-10</td>
+        </tr>
+        <tr>
+            <td>竹下医院</td>
+            <td>東京都新宿区高田馬場2丁目14-22</td>
+        </tr>
+        <tr>
+            <td>たつきクリニック</td>
+            <td>東京都新宿区西新宿7-16-14ミクラ西新宿ビル 2F</td>
+        </tr>
+
+
+
+
+    </table>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.4.0/jquery.quicksearch.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#search').quicksearch('table.tb01 tbody tr');
+            $('#search').keyup(function () {
+                if ($('table.tb01 tbody tr:visible').length == 0) {
+                    $('.noresults').show();
+                } else {
+                    $('.noresults').hide();
+                }
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
